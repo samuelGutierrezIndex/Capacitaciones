@@ -1,0 +1,53 @@
+.sys-navigation {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #2c2c2c;
+    color: #fff;
+}
+
+nav a {
+    color: #fff;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: red;
+    transition: color 0.5s ease;
+}
+
+.navbar-collapse {
+    background-color: #2c2c2c;
+    color: #fff;
+    padding: 8px;
+    border-radius: 12px;
+}
+
+.login {
+    height: 50px;
+    width: 100px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    &__img {
+        margin-left: 5px;
+        font-size: 30px;
+        color: #d3a81b;
+    }
+
+    &__text {
+        margin-left: 5px;
+        margin-right: 3px;
+
+        a {
+            color: #eebf25;
+            font-size: 18px;
+        }
+
+    }
+}
