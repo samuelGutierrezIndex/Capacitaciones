@@ -1,0 +1,22 @@
+.title-typewriter {
+    display: inline-block;
+    animation: typing 3s steps(30, end), blink 0.5s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 40px;
+    line-height: 1;
+    // border-right: 4px solid #181717;
+    color: #d62c2c;
+    text-shadow: 2px 2px #333;
+  }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: #5c4848 }
+  }
+  

@@ -9,10 +9,17 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { TitleH1Component } from './components/titles/title-h1/title-h1.component';
+import { TitleH4Component } from './components/titles/title-h4/title-h4.component';
+import { TextComponent } from './components/text/text.component';
 
 @NgModule({
 
-  declarations: [],
+  declarations: [
+    TitleH1Component,
+    TitleH4Component,
+    TextComponent
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -31,7 +38,10 @@ import { MatListModule } from '@angular/material/list';
     MatToolbarModule,
     HttpClientModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    TitleH1Component,
+    TitleH4Component,
+    TextComponent
   ]
 
 })

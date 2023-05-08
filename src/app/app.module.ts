@@ -10,6 +10,8 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeModule } from './modules/home/home.module';
 import { VideosModule } from './modules/videos/videos.module';
+import { CoreModule } from '@core/core.module';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -25,13 +27,25 @@ import { VideosModule } from './modules/videos/videos.module';
     BrowserAnimationsModule,
     SharedModule,
     HomeModule,
-    VideosModule
+    VideosModule,
+    CoreModule
   ],
   exports:[
-    SharedModule
+    SharedModule,
+    AuthModule,
+    HomeModule,
+    VideosModule,
+    CoreModule,
+    AppRoutingModule,
+    CoreModule
   ],
   
-  providers: [],
+  providers: [
+    {
+      provide: LocationStrategy,
+      useClass: PathLocationStrategy,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

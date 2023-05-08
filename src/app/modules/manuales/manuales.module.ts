@@ -1,21 +1,22 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '@shared/shared.module';
-import { VideosRoutingModule } from './videos.routing.module';
+import { ManualesRoutingModule } from './manuales-routing.module';
 import { CategoriesComponent } from './pages/categories/categories.component';
-import { ListVideosComponent } from './pages/list-videos/list-videos.component';
+import { ListManualesComponent } from './pages/list-manuales/list-manuales.component';
+
 
 @NgModule({
   declarations: [
     CategoriesComponent,
-    ListVideosComponent
+    ListManualesComponent
   ],
   imports: [
-    SharedModule,
-    VideosRoutingModule
+    ManualesRoutingModule,
+    SharedModule
   ],
   exports:[
     CategoriesComponent,
-    ListVideosComponent
+    ListManualesComponent
   ]
 })
-export class VideosModule { }
+export class ManualesModule { }

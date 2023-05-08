@@ -3,45 +3,56 @@ import { RouterModule, Routes } from '@angular/router';
 import { SkeletonComponent } from './layout/skeleton/skeleton.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/auth/login', pathMatch: 'full' },
 
   {
-    path: '',
-    redirectTo: '/home/login',
-    pathMatch: 'full'
-  },
-
-  {
-    path: 'home',
+    path: 'auth',
     component: SkeletonComponent,
     children: [
       {
         path: 'login',
         loadChildren: () =>
-          import('./modules/home/home.module').then((m) => m.HomeModule)
+          import('./modules/auth/auth.module').then((m) => m.AuthModule),
       },
-      {
-        path: '**',
-        redirectTo: '/home/login',
-        pathMatch: 'full'
-      },
-    ]
+      { path: '**', redirectTo: '/auth/login', pathMatch: 'full' },
+    ],
   },
 
+  // Ruta del módulo de home
   {
     path: 'home',
-    redirectTo:'home'
+    component: SkeletonComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./modules/home/home.module').then((m) => m.HomeModule)
+      },
+
+      {
+        path:'categories-videos',
+        loadChildren: () =>
+        import('./modules/videos/videos.module').then((m) => m.VideosModule),
+      },
+
+      {
+        path:'categories-manuales',
+        loadChildren: () =>
+        import('./modules/manuales/manuales.module').then((m) => m.ManualesModule),
+      },
+
+      { path: '**', redirectTo: '/home', pathMatch: 'full' },
+    ],
   },
 
-  {
-    path: '**',
-    redirectTo: '/home/login',
-    pathMatch: 'full'
-  },
+
+  // Ruta para cualquier otra ruta no definida
+  { path: '**', redirectTo: '/auth/login' },
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash: false})],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { useHash: false })],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

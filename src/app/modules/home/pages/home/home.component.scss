@@ -6,8 +6,9 @@
     }
 
     &_options {
-        margin-top: 150px;
-
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
         &_items {
 
             text-align: center;
