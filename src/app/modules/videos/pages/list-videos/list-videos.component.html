@@ -1,50 +1,22 @@
-<div class="container sys-videos-commercial">
-    <div class="row sys-videos-commercial_title">
-      <div class="col-12">
-          <h1>
-              <app-title-h1 [text]="title | uppercase"></app-title-h1>
-          </h1>
+
+<div class="container">
+  <div class="container sys-grid-container">
+    <div class="sys-grid-container-title">
+      <app-title-h1 [text]="title"></app-title-h1>
+    </div>
+    <div class="sys-grid-container-video">
+      <div class="sys-grid-container-video_content">
+
       </div>
     </div>
-    <div class="row sys-videos-commercial_list">
-      <div class="col-md-6 sys-videos-commercial_list_items">
+    <div class="sys-grid-container-list">
+      <div class="sys-grid-container-list_content">
         <ul>
-          <li>
-            <app-text text="1. Catalogos"></app-text>
-          </li>
-          <li>
-            <app-text text="2. Documentos"></app-text>
-          </li>
-          <li>
-            <app-text text="3. Procesos"></app-text>
-          </li>
-          <li>
-            <app-text text="4. Informes"></app-text>
-          </li>
-          <li>
-            <app-text text="5. Permisos"></app-text>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-6 sys-videos-commercial_list_items">
-        <ul>
-          <li>
-            <app-text text="1. Catalogos"></app-text>
-          </li>
-          <li>
-            <app-text text="2. Documentos"></app-text>
-          </li>
-          <li>
-            <app-text text="3. Procesos"></app-text>
-          </li>
-          <li>
-            <app-text text="4. Informes"></app-text>
-          </li>
-          <li>
-            <app-text text="5. Permisos"></app-text>
+          <li *ngFor="let item of videos">
+            {{item.id}}. {{item.name}}. {{item.description}}
           </li>
         </ul>
       </div>
     </div>
   </div>
-  
+</div>

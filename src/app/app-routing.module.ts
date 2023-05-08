@@ -35,12 +35,6 @@ const routes: Routes = [
         import('./modules/videos/videos.module').then((m) => m.VideosModule),
       },
 
-      {
-        path:'categories-manuales',
-        loadChildren: () =>
-        import('./modules/manuales/manuales.module').then((m) => m.ManualesModule),
-      },
-
       { path: '**', redirectTo: '/home', pathMatch: 'full' },
     ],
   },

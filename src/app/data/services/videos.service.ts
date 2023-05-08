@@ -1,27 +1,23 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ResponseApi } from '@data/interfaces/response-api';
-import { Observable } from 'rxjs';
+import { Videos } from '@data/interfaces/videos';
+import { ApiClass } from '@data/schemas/ApiClass.class';
+import { Observable, catchError, retry } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
-export class VideosService {
-
-  private URL_API: string;
-
-  constructor(
-    private http: HttpClient
-  ) {
-    this.URL_API = '';
-  }
+export class VideosService extends ApiClass  { 
 
   /**
    * 
-   * @returns Retorna todo los videos de la API.
+   * @returns todos los videos de la API.
    */
-  getVideos():Observable<ResponseApi>{
-    return this.http.get(`${this.URL_API}/videos`);
+  getAllVideos():Observable<Videos[]>{
+    return this.http.get<Videos[]>(`${this.uri}/videos`).pipe(
+      retry(3), // Reintentar hasta 3 veces si hay un error
+      catchError(this.handleError) // Manejar errores
+    );
   }
 
 }

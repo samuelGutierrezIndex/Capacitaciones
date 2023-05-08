@@ -1,0 +1,39 @@
+{
+  "videos": [
+    {
+      "id": 1,
+      "description": "En este video se explica la realizacion de una solicitud de pedido desde el modulo comercial",
+      "name": "Realizacion de solicitud",
+      "url": "",
+      "id_categories": 1
+    },
+    {
+      "id": 2,
+      "description": "En este video se explica la realizacion de una solicitud de pedido desde el modulo comercial",
+      "name": "Realizacion de solicitud",
+      "url": "",
+      "id_categories": 2
+    },
+    {
+      "id": 3,
+      "description": "En este video se explica la realizacion de una solicitud de pedido desde el modulo comercial",
+      "name": "Realizacion de solicitud",
+      "url": "",
+      "id_categories": 3
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "module commercial"
+    },
+    {
+      "id": 2,
+      "name":"module transporte"
+    },
+    {
+      "id": 3,
+      "name":"module nomina"
+    }
+  ]
+}

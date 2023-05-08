@@ -1,16 +1,37 @@
-.sys-videos-commercial {
-    &_title {
-      margin-top: 30px;
-      text-align: center;
-    }
-  
-    &_list {
-      margin-top: 50px;
-  
-      &_items {
-          display: flex;
-          justify-content: center;
-      }
-    }
+
+.sys-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 0.4fr;
+  grid-template-areas:
+    "sys-grid-container-title sys-grid-container-title"
+    "sys-grid-container-video sys-grid-container-list";
+}
+
+.sys-grid-container-title {
+  grid-area: sys-grid-container-title;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.sys-grid-container-video {
+  grid-area: sys-grid-container-video;
+  margin-top: 30px;
+  height: 500px;
+  padding: 10px;
+
+  &_content {
+    height: 100%;
+    width: 100%;
   }
-  
+}
+
+.sys-grid-container-list {
+  grid-area: sys-grid-container-list;
+  margin-top: 30px;
+  padding: 10px;
+
+  &_content {
+    height: 100%;
+    width: 100%;
+  }
+}

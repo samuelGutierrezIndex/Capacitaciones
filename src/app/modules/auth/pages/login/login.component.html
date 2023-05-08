@@ -20,21 +20,21 @@
         </div>
         <div class="sys-login-form-content">
 
-            <form action="" class="sys-login-form-content_form">
+            <form [formGroup]="loginForm" (ngSubmit)="login()" class="sys-login-form-content_form">
 
                 <div class="mb-3">
-                    <label for="" class="form-label">User:</label>
-                    <input class="form-control" type="text" name="User" id="user" placeholder="user">
+                    <label for="" class="form-label">Usuario:</label>
+                    <input class="form-control" type="text" name="User" id="user" placeholder="user" formControlName="usuario">
                 </div>
                 <div class="mb-3">
-                    <label for="" class="form-label">Password:</label>
-                    <input class="form-control" type="password" name="clave" id="clave" placeholder="Password">
+                    <label for="" class="form-label">Contraseña:</label>
+                    <input class="form-control" type="password" name="clave" id="clave" placeholder="Password" formControlName="clave">
                 </div>
 
                 <div class="mb-3">
                     <div class="row d-flex justify-content-center">
                         <div class="col-6">
-                            <button type="submit" class="sys-login-form-content_form_btn" routerLink="/home">Ingresar</button>
+                            <button type="submit" class="sys-login-form-content_form_btn">Ingresar</button>
                         </div>
                     </div>
                 </div>
